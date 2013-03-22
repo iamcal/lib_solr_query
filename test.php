@@ -1,6 +1,6 @@
 <?php
 	include('testmore.php');
-	include('query_parse.php');
+	include('lib_solr_query.php');
 
 
 	$map = array(
@@ -43,5 +43,5 @@
 
 	foreach ($map as $k => $v){
 
-		is(query_parse($k), $v, "Parsing $k");
+		is(solr_query_parse($k), $v, "Parsing $k");
 	}
