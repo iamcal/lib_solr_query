@@ -46,11 +46,11 @@
 		'"foo bar" and baz'	=> '("foo bar" AND baz)',
 		'"foo bar" or baz'	=> '("foo bar" OR baz)',
 
-		# implicit phrases
-		'foo and bar baz'	=> 'foo AND "bar baz"',
-		'foo or bar baz'	=> 'foo OR "bar baz"',
-		'foo bar and baz'	=> '"foo bar" AND baz',
-		'foo bar or baz'	=> '"foo bar" OR baz',
+		# implicit phrases (NOT IMPLEMENTED)
+	#	'foo and bar baz'	=> 'foo AND "bar baz"',
+	#	'foo or bar baz'	=> 'foo OR "bar baz"',
+	#	'foo bar and baz'	=> '"foo bar" AND baz',
+	#	'foo bar or baz'	=> '"foo bar" OR baz',
 	);
 
 
