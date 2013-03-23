@@ -39,9 +39,9 @@
 
 		# phrases
 		'"foo bar"'		=> '"foo bar"',
-		'"foo bar" baz'		=> '"foo bar" AND baz',
-		'"foo bar" and baz'	=> '"foo bar" AND baz',
-		'"foo bar" or baz'	=> '"foo bar" OR baz',
+		'"foo bar" baz'		=> '("foo bar" AND baz)',
+		'"foo bar" and baz'	=> '("foo bar" AND baz)',
+		'"foo bar" or baz'	=> '("foo bar" OR baz)',
 
 		# implicit phrases
 		'foo and bar baz'	=> 'foo AND "bar baz"',
