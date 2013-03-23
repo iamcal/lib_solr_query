@@ -29,13 +29,13 @@
 		'foo AND NOT bar'	=> '(foo AND -bar)',
 
 		# not boolean
-		'foo NOT bar'		=> 'foo NOT bar',
-		'foo OR NOT bar'	=> 'foo OR "not bar"',
-		'NOT foo AND NOT bar'	=> '"not foo" NOT bar',
-		'NOT foo AND bar'	=> '"not foo" AND bar',
-		'foo AND'		=> 'foo AND and',
-		'foo AND bar AND'	=> 'foo AND "bar and"',
-		'foo AND bar or'	=> 'foo AND "bar or"',
+		'foo NOT bar'		=> '(-bar foo)',
+		'foo OR NOT bar'	=> '(foo OR -bar)',
+		'NOT foo AND NOT bar'	=> '(-foo AND -bar)',
+		'NOT foo AND bar'	=> '(-foo AND bar)',
+		'foo AND'		=> '(foo AND "AND")',
+		'foo AND bar AND'	=> '((foo AND bar) AND "AND")',
+		'foo AND bar or'	=> '((foo AND bar) AND "or")',
 
 		# phrases
 		'"foo bar"'		=> '"foo bar"',
