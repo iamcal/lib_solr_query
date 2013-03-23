@@ -39,6 +39,9 @@
 		'foo AND bar AND'	=> '((foo AND bar) AND "AND")',
 		'foo AND bar or'	=> '((foo AND bar) AND "or")',
 		'foo not'		=> '(foo AND "not")',
+		'And foo'		=> '("And" AND foo)',
+		'Or foo'		=> '("Or" AND foo)',
+		'Not +foo'		=> '(+foo "Not")',
 
 		# phrases
 		'"foo bar"'		=> '"foo bar"',
