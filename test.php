@@ -14,19 +14,19 @@
 		'foo * bar'		=> '(foo AND \\* AND bar)',
 
 		# + and - operators
-		'+foo +bar'		=> 'foo AND bar',
-		'+foo bar'		=> 'foo OR (foo AND bar)',
-		'+foo bar baz'		=> 'foo OR (foo AND bar) OR (foo AND baz) OR (foo AND bar AND baz)',
-		'foo -bar'		=> 'foo NOT bar',
-		'-foo -bar'		=> 'foo AND bar',
+		'+foo +bar'		=> '(+foo +bar)',
+		'+foo bar'		=> '(+foo bar)',
+		'+foo bar baz'		=> '(+foo (bar AND baz))',
+		'foo -bar'		=> '(-bar foo)', # caused by term re-ordering and grouping
+		'-foo -bar'		=> '(-foo -bar)',
 
 		# and & or booleans
-		'foo AND bar'		=> 'foo AND bar',
-		'foo OR bar'		=> 'foo OR bar',
-		'foo AND (bar OR baz)'	=> 'foo AND (bar OR baz)',
-		'foo bar OR baz'	=> 'foo AND (bar OR baz)',
-		'foo AND bar OR baz'	=> 'foo AND (bar OR baz)',
-		'foo AND NOT bar'	=> 'foo NOT bar',
+		'foo AND bar'		=> '(foo AND bar)',
+		'foo OR bar'		=> '(foo OR bar)',
+		'foo AND (bar OR baz)'	=> '(foo AND (bar OR baz))',
+		'foo bar OR baz'	=> '(foo AND (bar OR baz))',
+		'foo AND bar OR baz'	=> '((foo AND bar) OR baz)',
+		'foo AND NOT bar'	=> '(foo AND -bar)',
 
 		# not boolean
 		'foo NOT bar'		=> 'foo NOT bar',
