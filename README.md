@@ -1,4 +1,4 @@
-# php-query-parse - Turn human queries into SOLR queries
+# lib_solr_query - Turn human queries into SOLR queries
 
 If you're taking search queries from users, sending them directly to SOLR wont return what
 you mean, most of the time. Even ignore input sanitizing, dealing with nesting and booleans
