@@ -5,7 +5,7 @@ you mean, most of the time. Even ignore input sanitizing, dealing with nesting a
 correctly is a PITA. This library tries to hide all the pain.
 
 Some assumptions are made about what you mean to do in ambiguous cases - `"foo bar"` is taken 
-to mean "match documents with both `foo` and `bar`, which is not how Lucene queries work (they
+to mean "match documents with both `foo` and `bar`", which is not how Lucene queries work (they
 assume an 'or' operation for a bare list of terms). There are currently no configurable options,
 so changing this behavior involves modifiying the code.
 
