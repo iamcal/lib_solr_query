@@ -254,7 +254,7 @@
 					$out[] = array('GROUP', "({$prev[1]} {$op} {$next[1]})");
 					
 				}else{
-					$out[] = array('TERM', solr_query_escape($t[1]));
+					$out[] = array('TERM', '"'.solr_query_escape($t[1]).'"');
 				}
 
 			}else{
