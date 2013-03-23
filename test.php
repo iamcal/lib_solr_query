@@ -33,9 +33,12 @@
 		'foo OR NOT bar'	=> '(foo OR -bar)',
 		'NOT foo AND NOT bar'	=> '(-foo AND -bar)',
 		'NOT foo AND bar'	=> '(-foo AND bar)',
+
+		# incorrect booleans
 		'foo AND'		=> '(foo AND "AND")',
 		'foo AND bar AND'	=> '((foo AND bar) AND "AND")',
 		'foo AND bar or'	=> '((foo AND bar) AND "or")',
+		'foo not'		=> '(foo AND "not")',
 
 		# phrases
 		'"foo bar"'		=> '"foo bar"',
