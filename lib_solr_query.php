@@ -213,11 +213,11 @@
 					}elseif ($next[1] == 'GROUP'){
 						$out[] = array('GROUP', '(NOT '.$next[1].')');
 					}else{
-						$out[] = array('TERM', solr_query_escape($t[1]));
+						$out[] = array('TERM', '"'.solr_query_escape($t[1]).'"');
 						array_unshift($in, $next);
 					}
 				}else{
-					$out[] = array('TERM', solr_query_escape($t[1]));
+					$out[] = array('TERM', '"'.solr_query_escape($t[1]).'"');
 				}
 			}else{
 				$out[] = $t;
